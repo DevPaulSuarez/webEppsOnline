@@ -1,0 +1,19 @@
+# Ignorar archivos sensibles o generados
+wp-data/wp-content/uploads/
+wp-data/wp-content/cache/
+wp-data/wp-content/upgrade/
+wp-data/wp-content/backup-*
+wp-data/wp-config.php
+
+# Ignorar base de datos y sistema de WordPress completo si no lo necesitas
+db-data/
+wp-data/index.php
+wp-data/license.txt
+wp-data/readme.html
+wp-data/xmlrpc.php
+wp-data/wp-*.php
+wp-data/wp-admin/
+wp-data/wp-includes/
+
+# Solo versionar tu tema hijo y plugins propios
+!wp-data/wp-content/themes/woodmart-child/
