@@ -1,12 +1,10 @@
-# Ignorar archivos sensibles o generados
-wp-content/uploads/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/backup-*
+# 🧠 Ignorar archivos sensibles y de configuración local
 wp-config.php
+.htaccess
+web.config
+.env
 
-# Ignorar base de datos y sistema de WordPress completo si no lo necesitas
-
+# 📦 WordPress Core - nunca versionar
 index.php
 license.txt
 readme.html
@@ -15,5 +13,32 @@ wp-*.php
 wp-admin/
 wp-includes/
 
-# Solo versionar tu tema hijo y plugins propios
+# 🗂️ Ignorar medios, caché y datos generados
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-*/
+
+# 🎨 Ignorar todos los temas excepto el tema hijo
+wp-content/themes/*
 !wp-content/themes/woodmart-child/
+
+# 🧩 Ignorar todos los plugins excepto los propios
+wp-content/plugins/*
+!wp-content/plugins/mi-plugin-propio/
+
+# 🔧 Herramientas y archivos temporales
+node_modules/
+dist/
+vendor/
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+
+# ⚙️ Configuración de IDEs y herramientas
+.vscode/
+.idea/
+*.sublime-*
