@@ -1,9 +1,87 @@
-/*
- Theme Name:   Woodmart Child
- Description:  Woodmart Child Theme
- Author:       XTemos
- Author URI:   http://xtemos.com
- Template:     woodmart
- Version:      1.0.0
- Text Domain:  woodmart
-*/
+.cta-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+
+    /* Imagen de fondo para escritorio */
+    background-image: url(https://www.tiendastec.com/wp-content/uploads/2024/04/cintillo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* Escala la imagen proporcional al contenedor */
+}
+
+.cta-bar__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cta-label {
+  font-size: 14px;
+  color: #333;
+  margin-right: auto;
+}
+
+.cta-whatsapp a {
+  display: inline-block;
+  margin: 4px 6px 4px 0;
+  padding: 8px 12px;
+  background: wheat;
+  color: #000;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.cta-whatsapp a i {
+  margin: 0 6px;
+}
+
+.cta-whatsapp a:hover {
+  filter: brightness(0.95);
+}
+
+.cta-close {
+  font-size: 22px;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  margin-left: auto;
+}
+
+/* Desktop vs Móvil */
+.pc { display: block; }
+.mobile { display: none; }
+
+@media (max-width: 768px) {
+  .pc { display: none; }
+  .mobile { display: block; }
+  .cta-bar__content { justify-content: center; }
+
+  /* 👇 Oculta el texto "Asesor de Ventas" solo en móvil */
+  .cta-label { 
+    display: none; 
+  }
+  .cta-bar {
+    /* Imagen de fondo para escritorio */
+    background-image: url('');
+}
+}
