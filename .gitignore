@@ -20,6 +20,7 @@ wp-content/upgrade/
 wp-content/backup-*/
 wp-content/languages/
 wp-content/ai1wm-backups/
+wp-content/jetpack-waf/
 
 # 🎨 Temas: ignorar todos excepto el tema hijo
 wp-content/themes/*
@@ -43,3 +44,5 @@ vendor/
 .vscode/
 .idea/
 *.sublime-*
+
+
