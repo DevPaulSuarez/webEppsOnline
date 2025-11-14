@@ -1,23 +1,391 @@
-.cta-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 9999;
-    font-family: sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
-    border-radius: 10px;
+/*
+Theme Name: Woodmart Child
+Theme URI: https://xtemos.com/themes/woodmart/
+Description: Tema hijo de Woodmart para personalizaciones seguras.
+Author: PessDev
+Author URI: https://devpess.com
+Template: woodmart
+Version: 1.0
+Text Domain: woodmart
+*/
 
-    /* Imagen de fondo para escritorio */
-    background-image: url(https://www.tiendastec.com/wp-content/uploads/2024/04/cintillo.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain; /* Escala la imagen proporcional al contenedor */
+/* =========================================================
+   🟢 SECCIÓN 1 — CABECERA E INPUTS
+   ========================================================= */
+
+input.s {
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: wheat;
+}
+
+.wd-search-results-wrapper,
+.wd-search-results,
+.wd-scroll-content,
+.wd-search-suggestions,
+.wd-suggestions-group {
+  border-radius: 5px;
+  background-color: #fafafa;
+  box-sizing: border-box;
+}
+
+.whb-color-dark:not(.whb-with-bg) {
+  background-color: #f8a613;
+}
+
+main#main-content {
+  padding: 0 !important;
+}
+
+/* =========================================================
+   🟢 SECCIÓN 2 — TARJETAS DE PRODUCTO / CATÁLOGO
+   ========================================================= */
+
+.wd-carousel-item {
+  height: 100%;
+  display: flex;
+}
+
+.products .product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  flex: 1;
+}
+
+.products .product .product-wrapper {
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  min-height: 420px;
+  transition: box-shadow 0.3s ease;
+}
+
+.products .product .product-image-link {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.products .product img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.products .product:hover img {
+  transform: scale(1.03);
+}
+
+.products .product:hover .product-wrapper {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15), 0 0 0 2px #f8a613;
+}
+
+.products .product .wd-buttons {
+  margin-top: auto;
+}
+
+.products .product .wd-entities-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px 0 5px;
+  color: #111;
+  text-align: center;
+}
+
+.products .product .wd-product-cats {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.products .product .price {
+  display: block;
+  font-size: 15px;
+  text-align: center;
+  color: #444;
+}
+
+.products .product .price del {
+  color: #999;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.products .product .price ins {
+  text-decoration: none;
+  color: #e53935;
+  font-weight: 600;
+}
+
+.products .product-grid-item {
+  margin-bottom: 20px;
+}
+
+/* Ocultar elementos no deseados */
+.products .product .product-labels,
+.products .product .wd-product-cats,
+.products .product .wrapp-buttons,
+.products .product .quick-view,
+.products .product .wd-compare-btn,
+.products .product .wd-wishlist-btn,
+.products .product .wd-price-unit {
+  display: none !important;
+}
+
+/* =========================================================
+   🟢 SECCIÓN 3 — CATEGORÍAS GENERALES (DESKTOP)
+   ========================================================= */
+
+.mobile-nav.wd-side-hidden.wd-side-hidden-nav.wd-left.wd-opener-arrow.wd-opened {
+  width: auto;
+}
+
+.categoriasGenerales {
+  display: block;
+  background-color: #f59d0c;
+  padding: 5px 0;
+}
+
+.categoriasGenerales .wd-nav-product-cat {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: smooth !important;
+  scrollbar-width: none;
+}
+
+.categoriasGenerales .wd-nav-product-cat::-webkit-scrollbar {
+  display: none;
+}
+
+.categoriasGenerales .cat-item {
+  flex: 0 0 auto;
+  width: 100px !important;
+  min-width: 100px !important;
+  height: 145px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: center !important;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.categoriasGenerales .cat-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background-color: wheat;
+}
+
+.categoriasGenerales .category-nav-link {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.categoriasGenerales .wd-nav-img {
+  width: 75px !important;
+  height: 75px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin-bottom: 1px !important;
+  filter: invert(10%) sepia(78%) saturate(6764%) hue-rotate(58deg)
+    brightness(94%) contrast(86%);
+}
+
+/* =========================================================
+   🟢 SECCIÓN 4 — CATEGORÍAS MÓVILES (categoriasGeneralesMovile)
+   ========================================================= */
+
+.categoriasGeneralesMovile {
+  display: block !important;
+  background-color: #f59d0c !important;
+  padding: 0 !important; /* 🔧 antes era 5px 0 */
+  margin: 0 !important; /* 🔧 asegúrate de eliminar cualquier margen externo */
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.categoriasGeneralesMovile .wd-nav-product-cat-wrap {
+  width: 100% !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.categoriasGeneralesMovile .wd-nav-product-cat {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: smooth !important;
+  scrollbar-width: none !important;
+  padding: 0px 0px !important;
+  margin: 0 !important;
+  gap: 12px !important;
+  -webkit-overflow-scrolling: touch !important;
+  list-style: none !important;
+}
+
+.categoriasGeneralesMovile .wd-nav-product-cat::-webkit-scrollbar {
+  display: none !important;
+}
+
+.categoriasGeneralesMovile .cat-item {
+  flex: 0 0 auto !important;
+  width: 100px !important;
+  min-width: 100px !important;
+  max-width: 100px !important;
+  height: 145px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  padding: 8px 5px !important;
+  margin: 0 !important;
+  border-radius: 6px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease !important;
+  background-color: transparent !important;
+}
+
+.categoriasGeneralesMovile .category-nav-link {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  text-decoration: none !important;
+  color: #333 !important;
+  gap: 0px !important;
+  padding-top: 2px !important;
+  padding-bottom: 40px !important;
+}
+
+.categoriasGeneralesMovile .nav-link-summary {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  flex: 1 !important;
+}
+
+.categoriasGeneralesMovile .nav-link-text {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  display: block !important;
+  word-wrap: break-word !important;
+  color: #6e3f12 !important;
+  max-width: 100% !important;
+  text-align: center !important;
+}
+
+/* Responsivo para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .categoriasGeneralesMovile .cat-item {
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    height: 95px !important;
+    padding: 0px 0px !important;
+  }
+
+  .categoriasGeneralesMovile .wd-nav-img {
+    max-width: 30px !important;
+    max-height: 30px !important;
+    object-fit: contain !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+    filter: invert(10%) sepia(78%) saturate(6764%) hue-rotate(58deg)
+      brightness(94%) contrast(86%) !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  .categoriasGeneralesMovile .nav-link-text {
+    font-size: 9px !important;
+    font-weight: bold !important;
+  }
+
+  .categoriasGeneralesMovile .wd-nav-product-cat {
+    gap: 0px !important;
+  }
+}
+
+/* =========================================================
+   🟢 SECCIÓN 5 — DROPDOWN HEADER CATEGORÍAS
+   ========================================================= */
+
+.wd-dropdown-cats #menu-header_categorias {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.wd-dropdown-cats #menu-header_categorias > li {
+  width: 100%;
+  margin: 0;
+}
+
+.wd-dropdown-cats {
+  overflow: hidden;
+  width: 100%;
+  min-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .wd-dropdown-cats #menu-header_categorias {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   🟢 SECCIÓN 6 — CTA BAR (WHATSAPP)
+   ========================================================= */
+
+.cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  background-image: url("../../uploads/2025/10/cintillo1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .cta-bar__content {
@@ -27,12 +395,12 @@
   gap: 10px;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 0 auto;
+  margin-left: 50%;
 }
 
 .cta-label {
-  font-size: 14px;
-  color: #333;
+  font-size: 16px;
+  color: #000000;
   margin-right: auto;
 }
 
@@ -40,8 +408,8 @@
   display: inline-block;
   margin: 4px 6px 4px 0;
   padding: 8px 12px;
-  background: wheat;
-  color: #000;
+  background: #7f6051;
+  color: white;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 700;
@@ -49,39 +417,327 @@
   white-space: nowrap;
 }
 
-.cta-whatsapp a i {
-  margin: 0 6px;
-}
-
 .cta-whatsapp a:hover {
   filter: brightness(0.95);
+  background: wheat;
+  color: #6e3f12;
 }
 
 .cta-close {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 6px 10px;
+  padding: 1px 2px !important;
   margin-left: auto;
 }
 
-/* Desktop vs Móvil */
-.pc { display: block; }
-.mobile { display: none; }
+.pc {
+  display: block;
+}
+.mobile {
+  display: none;
+}
 
 @media (max-width: 768px) {
-  .pc { display: none; }
-  .mobile { display: block; }
-  .cta-bar__content { justify-content: center; }
-
-  /* 👇 Oculta el texto "Asesor de Ventas" solo en móvil */
-  .cta-label { 
-    display: none; 
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .cta-bar__content {
+    justify-content: center;
+  }
+  .cta-label {
+    display: none;
   }
   .cta-bar {
-    /* Imagen de fondo para escritorio */
-    background-image: url('');
+    background-image: url("");
+  }
 }
+
+/* =========================================================
+   🟢 SECCIÓN 7 — MINI CART / CARRITO LATERAL
+   ========================================================= */
+
+.woocommerce-mini-cart__total,
+.woocommerce-mini-cart__buttons .checkout {
+  display: none !important;
+}
+
+.cart-widget-side .wd-heading .title {
+  visibility: hidden;
+  position: relative;
+}
+
+.cart-widget-side .wd-heading .title::after {
+  content: "Carrito";
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  color: inherit;
+}
+
+.cart-widget-side .close-side-widget a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  font-size: 14px;
+  position: relative;
+}
+
+.cart-widget-side .close-side-widget a span {
+  display: none;
+}
+
+.cart-widget-side .close-side-widget a::after {
+  content: "Cerrar";
+  font-weight: 500;
+}
+
+.woocommerce-mini-cart__buttons .btn-cart {
+  background-color: #7f6051 !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  border: none !important;
+  border-radius: 6px;
+  padding: 10px 18px !important;
+  transition: background-color 0.3s ease;
+  margin-bottom: 30px !important;
+}
+
+.woocommerce-mini-cart__buttons .btn-cart:hover {
+  background-color: #5f473d !important;
+  color: #ffffff !important;
+}
+
+.wd-page-title.page-title-default {
+  visibility: hidden !important;
+  height: 25px;
+}
+
+/* Ajuste móvil adicional */
+@media (max-width: 480px) {
+  .categoriasGeneralesMovile {
+    background-color: red;
+    z-index: 9980 !important; /* debajo del header, encima del contenido */
+    transition: box-shadow 0.3s ease;
+  }
+
+  .categoriasGeneralesMovile.fixed {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .categoriasGeneralesMovile--spacer {
+    display: block;
+    width: 100%;
+  }
+
+  /* 🔧 Corrige el espaciador del sticky para que no se vea */
+  .categoriasGeneralesMovile + div {
+    display: block;
+    height: auto;
+  }
+
+  .categoriasGeneralesMovile + div[style] {
+    background: transparent !important;
+    visibility: hidden !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  /* ======================================================
+   🚀 FIX GLOBAL: CARRUSEL DE CATEGORÍAS COMPLETO
+   ====================================================== */
+
+  /* Libera restricciones del contenedor (Woodmart + Visual Composer) */
+  .vc_row.vc_row-has-fill,
+  .wpb_column,
+  .categoriasGeneralesMovile {
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Contenedor principal del carrusel */
+  .categoriasGeneralesMovile .wd-nav-product-cat-wrap {
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0px 0px !important;
+    padding: 0px 0px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Carrusel horizontal */
+  .categoriasGeneralesMovile .wd-nav-product-cat {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 3.5px 0px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch; /* inercia táctil */
+    height: 60px !important;
+  }
+
+  /* Márgenes invisibles para evitar cortes en los extremos */
+  .categoriasGeneralesMovile .wd-nav-product-cat::before,
+  .categoriasGeneralesMovile .wd-nav-product-cat::after {
+    content: "";
+    flex: 0 0 0px;
+  }
+
+  /* Ítems completos y visibles */
+  .categoriasGeneralesMovile .cat-item {
+    flex: 0 0 auto !important;
+    min-width: 77px !important;
+    max-width: 100px !important;
+    box-sizing: border-box;
+  }
+
+  /* Oculta barra de scroll visualmente */
+  .categoriasGeneralesMovile .wd-nav-product-cat::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Loader circular */
+  .ajax-loader {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+  }
+
+  .ajax-loader .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #f59d0c;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Categoría activa */
+  .categoriasGeneralesMovile .category-nav-link.active {
+    background: #f5deb3 !important;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    transform: scale(1.1);
+    display: flex !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+  }
+
+  /* =========================================================
+   🚀 FIX — Prioridad del menú móvil frente al sticky de categorías
+   ========================================================= */
+
+  .mobile-nav.wd-side-hidden-nav.wd-opened {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 12000 !important; /* Superior al sticky */
+    background-color: #fff !important; /* Asegura fondo sólido */
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .mobile-nav.wd-side-hidden-nav.wd-opened .wd-heading {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 12010;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Si el sticky de categorías está activo, manténlo detrás */
+  .categoriasGeneralesMovile.fixed {
+    z-index: 9980 !important;
+  }
+
+  /* =========================================================
+   🚀 FIX — Prioridad del carrito lateral frente al sticky de categorías
+   ========================================================= */
+
+  .cart-widget-side.wd-side-hidden.wd-right.wd-opened {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important; /* en móviles ocupa todo el ancho */
+    max-width: 420px !important; /* en desktop se mantiene lateral */
+    z-index: 12000 !important; /* por encima del sticky */
+    background-color: #fff !important;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+    overflow-y: auto !important;
+  }
+
+  /* Cuando está abierto, el fondo del sitio queda fijo (opcional para UX) */
+  html.wd-opened-cart,
+  body.wd-opened-cart {
+    overflow: hidden !important;
+    touch-action: none;
+  }
+
+  /* Oculta temporalmente el sticky de categorías mientras el carrito está abierto */
+  .cart-widget-side.wd-side-hidden.wd-right.wd-opened
+    ~ .categoriasGeneralesMovile {
+    display: none !important;
+  }
+
+  /* Solo enviar detrás del buscador, sin ocultarlo */
+  .categoriasGeneralesMovile {
+    z-index: 1 !important;
+  }
+
+  .wd-search-results.wd-opened {
+    z-index: 9999 !important;
+  }
+}
+/* Mostrar slider solo en móvil */
+.categoria-slider-movil {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .categoria-slider-movil {
+    display: block !important;
+  }
+}
+
+/* 🔒 Ocultar el filtro de precio en la tienda y categorías */
+.widget_price_filter,
+.woocommerce-widget-layered-nav,
+.woocommerce-widget-price-filter,
+.wd-widget.widget_price_filter {
+  display: none !important;
 }
