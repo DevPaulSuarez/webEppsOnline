@@ -22,11 +22,15 @@ wp-content/languages/
 wp-content/ai1wm-backups/
 wp-content/jetpack-waf/
 
-# 🎨 Temas: ignorar todos excepto el tema hijo
-wp-content/themes/*
-!wp-content/themes/woodmart-child/
+# 🚫 Ignorar TODO wp-content completo (incluye el tema real)
+wp-content/
 
-# 🧩 Plugins – no tienes propios, ignorarlos todos
+# 🎨 Versionar SOLO la copia del tema hijo en la raíz
+# Esta es tu carpeta de trabajo oficial
+!woodmart-child/
+!woodmart-child/**
+ 
+# 🧩 Plugins – ignorar todos
 wp-content/plugins/
 
 # 🔧 Herramientas y archivos temporales
@@ -44,5 +48,3 @@ vendor/
 .vscode/
 .idea/
 *.sublime-*
-
-
