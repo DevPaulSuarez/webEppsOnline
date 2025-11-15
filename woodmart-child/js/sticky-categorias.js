@@ -60,4 +60,44 @@ document.addEventListener("DOMContentLoaded", () => {
       unfixBar();
     }
   });
+
+  /**************************************************************
+   * 👉 NUEVO: Padding solo cuando se hace CLICK en categorías
+   **************************************************************/
+
+  let paddingActivado = false;
+
+  // función que aplica padding solo si ya se hizo click
+  function aplicarPaddingProductosSiCorresponde() {
+    if (!paddingActivado) return; // solo aplicar después de click
+
+    const products = document.querySelector(".products");
+    if (!products) return;
+
+    products.style.paddingTop = "220px";
+  }
+
+  // Detectar CLICK en CUALQUIER categoría
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest(".categoriasGeneralesMovile a, .wd-product-cats a");
+
+    if (link) {
+      paddingActivado = true; // activar padding desde ahora
+      setTimeout(aplicarPaddingProductosSiCorresponde, 50);
+    }
+  });
+
+  // Cuando Woodmart recarga por AJAX solo aplicar si ya hubo click
+  [
+    "wdShopPageInit",
+    "wdUpdateProducts",
+    "woodmart-ajax-content-reloaded",
+    "yith_wcan_ajax_filtered",
+    "updated_wc_div"
+  ].forEach(ev =>
+    document.addEventListener(ev, () => {
+      setTimeout(aplicarPaddingProductosSiCorresponde, 60);
+    })
+  );
+
 });
