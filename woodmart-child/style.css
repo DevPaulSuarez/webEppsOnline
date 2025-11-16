@@ -769,3 +769,58 @@ main#main-content {
     width: 100%;
     z-index: 9999;
 }
+
+
+/* =====================================================
+   🔵 ESTILO UNIFICADO PARA BOTONES EN MÓVIL
+   ===================================================== */
+@media (max-width: 768px) {
+
+    /* Contenedor de botones en móvil */
+    .wd-product-footer {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    /* Forzar que ambos botones ocupen el ancho completo */
+    .wd-add-btn.wd-add-btn-replace {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    /* === BOTÓN AÑADIR AL CARRITO (loop) === */
+    .wd-product-footer a.add-to-cart-loop {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        background-color: #333333 !important; /* azul profesional */
+        border-color: #333333 !important;
+        color: #fff !important;
+
+        padding: 10px 10px !important;
+        border-radius: 4px !important;
+
+
+
+        box-shadow: 0 4px 8px rgba(0,0,0,0.10) !important;
+
+        gap: 8px !important; /* por si lleva iconos */
+    }
+
+    .wd-product.wd-hover-buttons-on-hover .add-to-cart-loop span {
+    display: contents !important;
+}
+
+    /* Fix para el <span> dentro */
+    .wd-product-footer a.add-to-cart-loop span {
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+    }
+
+    
+}
